@@ -1,0 +1,19 @@
+.TitleInfo {
+  color: teal;
+}
+
+.theDirector {
+    font-size: large;
+}
+
+.Tagline {
+  font-style: italic;
+}
+
+.thePoster img {
+  height: 500px;
+}
+
+.Cast {
+  color: teal;
+}
