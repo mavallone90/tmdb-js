@@ -1,6 +1,6 @@
 const root = document.querySelector(".site-wrap");
 const feed = "https://letterboxd.com/itsmeyouknow/rss/";
-const movieid_test = ["587807", "495764", "107", "1398", "10098"];
+const movieid_test = ["587807", "495764", "107", "1398", "10098", "550"];
 const tmdb_apikey = "a735bdf539e3961056f00ec379922d26";
 
 const mainDiv = document.querySelector(".Movies");
@@ -9,11 +9,11 @@ const posterDiv = document.querySelector(".Poster");
 const castDiv = document.querySelector(".Cast");
 const taglineDiv = document.querySelector(".Tagline");
 
-const currentID = movieid_test[2];
+const currentID = movieid_test[5];
 
 //search for movie:
-const searchTitle = "Birdman"; // Need spaces to be accepted
-const searchYear = "2014";
+const searchTitle = encodeURIComponent("Fight Club"); // FIXED - Need spaces to be accepted
+const searchYear = "1999";
 const movieRequest = `https://api.themoviedb.org/3/search/movie?api_key=${tmdb_apikey}&language=en-US&query=${searchTitle}&page=1&include_adult=false&year=${searchYear}&primary_release_year=${searchYear}`;
 console.log(movieRequest);
 
@@ -104,7 +104,6 @@ fetch(creditsRequest)
 function creditMovie(data) {
   data.crew.forEach(function (director) {
     if (director.job == "Director") {
-      console.log(director.name);
       var theDirector = document.createElement("div");
       theDirector.className = "theDirector";
       theDirector.innerHTML = `<p>Dir. ${director.name}</p>`;
