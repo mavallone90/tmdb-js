@@ -1,19 +1,82 @@
+body {
+    background-color: lavender;
+}
+.Movies {
+    display: grid;
+    grid-template-columns: 30% 35% 30%;
+}
+
 .TitleInfo {
-  color: teal;
+    color: teal;
+    grid-column: 2;
+    width: fit-content;
+}
+
+.review {
+    margin: 0px;
+}
+
+.review p {
+    margin-top: 0px;
+}
+
+.details {
+    float: initial;
+    height: 80px;
+    position:relative;
+
+}
+
+.details h1 {
+    margin: 0px;
+    bottom: 10px;
+    position: absolute;
+
 }
 
 .theDirector {
     font-size: large;
+    grid-column: 2;
+    height: 45px;
 }
 
+.theDirector p {
+margin: 0px;
+}
+
+.dir {margin: 0px;}
+
 .Tagline {
-  font-style: italic;
+    font-style: italic;
+    grid-column: 1;
+    width: fit-content;
+    text-align: center;
+}
+
+.thePoster{
+    grid-column: 1;
+    width: fit-content;
 }
 
 .thePoster img {
-  height: 500px;
+    width: 80%;
+    padding-top: 125px;
 }
 
 .Cast {
-  color: teal;
+    color: teal;
+    grid-column: 3;
+    width: 30%;
+    width: fit-content;
+    padding-top: 125px;
+    padding-left: 25px;
+}
+
+.castMember {
+    margin: 0px;
+}
+
+.castMember p {
+    margin-top: 0px;
+    margin-bottom: 15px;
 }

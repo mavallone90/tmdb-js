@@ -1,6 +1,6 @@
 const root = document.querySelector(".site-wrap");
 const feed = "https://letterboxd.com/itsmeyouknow/rss/";
-const movieid_test = ["587807", "495764", "107", "1398", "10098", "550"];
+const movieid_test = ["587807", "495764", "107", "1398", "10098", "550", "24657"];
 const tmdb_apikey = "a735bdf539e3961056f00ec379922d26";
 
 const mainDiv = document.querySelector(".Movies");
@@ -8,12 +8,13 @@ const titleDiv = document.querySelector(".TitleInfo");
 const posterDiv = document.querySelector(".Poster");
 const castDiv = document.querySelector(".Cast");
 const taglineDiv = document.querySelector(".Tagline");
+const dirDiv = document.querySelector(".dir")
 
-const currentID = movieid_test[5];
+const currentID = movieid_test[6];
 
 //search for movie:
-const searchTitle = encodeURIComponent("Fight Club"); // FIXED - Need spaces to be accepted
-const searchYear = "1999";
+const searchTitle = encodeURIComponent("The Sacrifice"); // FIXED - Need spaces to be accepted
+const searchYear = "1986";
 const movieRequest = `https://api.themoviedb.org/3/search/movie?api_key=${tmdb_apikey}&language=en-US&query=${searchTitle}&page=1&include_adult=false&year=${searchYear}&primary_release_year=${searchYear}`;
 console.log(movieRequest);
 
@@ -107,7 +108,7 @@ function creditMovie(data) {
       var theDirector = document.createElement("div");
       theDirector.className = "theDirector";
       theDirector.innerHTML = `<p>Dir. ${director.name}</p>`;
-      titleDiv.append(theDirector);
+      dirDiv.append(theDirector);
     }
   });
   data.cast.forEach(function (actor) {
